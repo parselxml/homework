@@ -44,4 +44,5 @@ def get_shop_list_by_dishes(dishes: list, person_count: int):
             if ingredients_name_ not in ingredients_:
                 ingredients_[ingredients_name_] = {'measure': measure_, 'quantity': quantity_ * person_count}
     pprint(ingredients_)
+    
 get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2)
