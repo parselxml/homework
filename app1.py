@@ -30,5 +30,18 @@ while i < len(lines):
 
     if i < len(lines):
         i += 1
-
 pprint(cook_book)
+
+
+def get_shop_list_by_dishes(dishes: list, person_count: int):
+    ingredients_ = {}
+    for i in dishes:
+        for j in cook_book[i]:
+            ingredients_name_ = j['ingredients_name']
+            measure_ = j['measure']
+            quantity_ = j['quantity']
+
+            if ingredients_name_ not in ingredients_:
+                ingredients_[ingredients_name_] = {'measure': measure_, 'quantity': quantity_ * person_count}
+    pprint(ingredients_)
+get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2)
